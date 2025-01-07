@@ -12,6 +12,42 @@ Welcome to the DND Character Creator! This project leverages the power of the Op
 
 ---
 
+## Project Structure
+
+The project is structured as follows:
+
+```
+dnd-character-creator/
+├── README.md
+├── LICENSE
+├── .env.example
+├── requirements.txt
+├── character_creator.py
+├── data/
+│   └── sample_characters.json
+├── docs/
+│   └── project_documentation.md
+├── src/
+│   ├── __init__.py
+│   ├── character_generator.py
+│   ├── utils.py
+└── tests/
+    ├── test_character_generator.py
+    └── test_utils.py
+```
+
+- `README.md`: Main documentation file for the project.
+- `LICENSE`: License information for the project.
+- `.env.example`: Example environment variables file.
+- `requirements.txt`: List of dependencies for the project.
+- `character_creator.py`: Main script to run the character creator.
+- `data/`: Directory for storing sample character data and other resources.
+- `docs/`: Directory for additional documentation.
+- `src/`: Directory for source code.
+- `tests/`: Directory for unit tests.
+
+---
+
 ## Installation
 
 1. **Clone the Repository**:
