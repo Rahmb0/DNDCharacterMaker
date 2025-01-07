@@ -2,13 +2,35 @@
 
 Welcome to the DND Character Creator! This project leverages the power of the OpenAI API to help you create detailed and imaginative characters for your Dungeons & Dragons campaigns. Whether you're a seasoned Dungeon Master or a first-time player, this tool will simplify the process of bringing your characters to life.
 
----
+## Table of Contents
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Example Output](#example-output)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Features
-- **AI-Generated Character Details**: Automatically generate character names, backstories, abilities, and traits.
-- **Customizable Parameters**: Adjust race, class, alignment, and other key attributes.
-- **Creative Backstories**: Receive rich, lore-friendly backstories tailored to your campaign setting.
-- **User-Friendly Interface**: Easy-to-use prompts and configurations for a seamless experience.
+- **AI-Generated Character Details**: 
+  - Character names based on race and background
+  - Rich, detailed backstories
+  - Balanced ability scores and traits
+  - Personality traits, ideals, bonds, and flaws
+- **Customizable Parameters**: 
+  - Choose from all official D&D 5e races and classes
+  - Select background and alignment
+  - Set custom ability score generation methods
+- **Campaign Integration**: 
+  - Generate characters that fit your campaign setting
+  - Create NPCs with specific roles and motivations
+  - Include relevant faction affiliations
+- **Export Options**:
+  - Save as JSON for programmatic use
+  - Export to PDF character sheets
+  - Plain text format for easy sharing
 
 ---
 
@@ -48,6 +70,11 @@ dnd-character-creator/
 
 ---
 
+## Prerequisites
+- Python 3.8 or higher
+- OpenAI API key
+- Basic understanding of D&D 5e mechanics
+
 ## Installation
 
 1. **Clone the Repository**:
@@ -56,34 +83,44 @@ dnd-character-creator/
    cd dnd-character-creator
    ```
 
-2. **Install Dependencies**:
+2. **Create and Activate Virtual Environment** (recommended):
+   ```bash
+   python -m venv venv
+   # On Windows
+   .\venv\Scripts\activate
+   # On Unix or MacOS
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set Up OpenAI API Key**:
-   - Obtain an API key from [OpenAI](https://platform.openai.com/).
-   - Create a `.env` file in the project directory and add your API key:
-     ```env
-     OPENAI_API_KEY=your_api_key_here
-     ```
-
----
+4. **Configure Environment**:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your OpenAI API key
+   ```
 
 ## Usage
 
-1. **Run the Script**:
-   ```bash
-   python character_creator.py
-   ```
+### Basic Usage
+```bash
+python character_creator.py
+```
 
-2. **Follow the Prompts**:
-   - Enter basic character details (e.g., race, class, alignment).
-   - Adjust preferences for backstory depth, personality traits, etc.
+### Advanced Options
+```bash
+python character_creator.py --race elf --class wizard --level 5 --alignment "lawful good"
+```
 
-3. **View and Save Your Character**:
-   - The generated character details will be displayed in the terminal.
-   - Save the output as a JSON or text file for future use.
+### Configuration Options
+| Option | Description | Default |
+|--------|-------------|---------|
+| `--level` | Character starting level | 1 |
+| `--method` | Ability score generation method | "standard array" |
+| `--detail` | Backstory detail level (1-5) | 3 |
 
 ---
 
@@ -99,10 +136,40 @@ dnd-character-creator/
 
 ## Contributing
 
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Submit a pull request with a detailed description of your changes.
+We welcome contributions! Please follow these steps:
+
+1. **Fork and Clone**:
+   ```bash
+   git fork https://github.com/your-username/dnd-character-creator.git
+   ```
+
+2. **Create Feature Branch**:
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+
+3. **Commit Changes**:
+   ```bash
+   git commit -m 'Add amazing feature'
+   ```
+
+4. **Push and Create PR**:
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+### Development Guidelines
+- Follow PEP 8 style guide
+- Add unit tests for new features
+- Update documentation as needed
+- Maintain compatibility with Python 3.8+
+
+## Troubleshooting
+
+Common issues and solutions:
+- **API Key Issues**: Ensure your `.env` file is properly configured
+- **Dependencies**: Try `pip install --upgrade -r requirements.txt`
+- **Generation Fails**: Check your internet connection and API quota
 
 ---
 
